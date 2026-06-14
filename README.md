@@ -18,6 +18,7 @@ Django Framework
 HTML
 CSS
 SQLite Database
+using javascript(minimal)
 
 ##
 Purpose

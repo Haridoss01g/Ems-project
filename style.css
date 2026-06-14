@@ -1,0 +1,36 @@
+  body{
+        background-color:lightgray;
+    }
+
+    .header{
+        background:linear-gradient(135deg,#0d47a1,#002f6c);
+        color:white;
+        text-align:center;
+        padding:30px 20px;
+    }
+
+    .employee-card{
+        margin-top:-40px;
+        border:none;
+        border-radius:15px;
+        box-shadow:0 0 20px rgba(0,0,0,0.1);
+        background-color: aliceblue;
+    }
+
+    .btn-primary{
+        padding:10px 25px;
+    }
+
+    .btn-secondary{
+        padding:10px 25px;
+    }
+    h3{
+      color: #0d47a1;
+      text-align: center;
+    }
+    .second{
+      color: #0d47a1  !important;
+      text-align: center;
+    }
+
+    

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'employee/dash.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <h4>EMS</h4>
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <a href="{% url 'employee_list' %}">
+                    Employees
+                </a>
+                <a href="#">Department</a>
+            </div>
+            <!-- Main Content -->
+            <div class="col-md-10 p-4">
+                <h2>
+                  Dashboard
+                </h2>
+                <div class="row mt-4">
+                   <div class="col-md-3">
+                      <div class="card text-white bg-primary mb-3 card-box">
+                        <div class="card-body">
+                             <h5>Total Employees</h5>
+                             <h3>{{ total_employees }}</h3>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card text-white bg-success card-box mb-3">
+                       <div class="card-body">
+                          <h5>Department</h5>
+                          <h3>{{ total_departments }}</h3>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-secondary card-box mb-3">
+                          <div class="card-body">
+                             <h5>Highest Salary</h5>
+                             <h3>{{ highest_salary}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

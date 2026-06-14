@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+    <style>
+        body{
+            background-image:url("{% static 'employee/login_bg1.jpg' %}");
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .login-card{
+            background:lightgray;
+            padding:30px;
+            border-radius:15px;
+            width:350px;
+            box-shadow:0 10px 25px rgba(131, 119, 119, 0.2);
+        }
+
+        .form-control:focus{
+            box-shadow:0 0 10px rgba(13,110,253,0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <h3 class="text-center text-primary mb-4">
+        <i class="bi bi-person-circle"></i> Login
+    </h3>
+    {% if form.errors %}
+    <small id="error-msg" class="text-danger text-center d-block mb-3">
+        Invalid Username or Password
+    </small>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">
+                <i class="bi bi-person"></i>
+            </span>
+            <input type="text" name="username" class="form-control" placeholder="Username">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">
+                <i class="bi bi-lock"></i>
+            </span>
+            <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+
+        <button class="btn btn-primary w-100">
+            Login
+        </button>
+
+    </form>
+
+</div>
+<script>
+    setTimeout(()=>{
+        let errorMsg = document.getElementById('error-msg');
+        if(errorMsg){
+            errorMsg.remove();
+        }
+    });
+</script>
+
+</body>
+</html>
